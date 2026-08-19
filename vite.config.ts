@@ -12,7 +12,7 @@ export default defineConfig({
         name: 'PAL Tech Learning Hub',
         short_name: 'PAL Tech',
         description: 'Learn, practise, play and build with technology.',
-        theme_color: '#2c8f25',
+        theme_color: '#277f21',
         background_color: '#fffdf6',
         display: 'standalone',
         start_url: '/',

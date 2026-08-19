@@ -21,7 +21,11 @@ export function loadProgress(): ProgressState {
 }
 
 export function saveProgress(progress: ProgressState) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  } catch {
+    // Learning remains usable when browser storage is unavailable or full.
+  }
 }
 
 export function modulePercent(progress: ProgressState, lessonIds: string[]) {
