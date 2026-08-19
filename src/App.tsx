@@ -31,6 +31,7 @@ function App() {
   useEffect(()=>{ const update=()=>setOnline(navigator.onLine); addEventListener('online',update); addEventListener('offline',update); return()=>{removeEventListener('online',update);removeEventListener('offline',update)}},[]);
   useEffect(()=>{let active=true;navigator.serviceWorker?.ready.then(()=>{if(active)setOfflineReady(true)});return()=>{active=false}},[]);
   useEffect(()=>{siteRef.current?.toggleAttribute('inert',showWelcome)},[showWelcome]);
+  useEffect(()=>{window.scrollTo({top:0,left:0,behavior:'auto'})},[view,selectedModule]);
   const lessonMap = useMemo(()=>Object.fromEntries(modules.map(m=>[m.id,m.lessons.map(l=>l.id)])),[]);
   const badges = earnedBadgeIds(progress,modules.map(m=>m.id),lessonMap);
   const overall = Math.round(modules.reduce((sum,m)=>sum+modulePercent(progress,m.lessons.map(l=>l.id)),0)/modules.length);
@@ -63,12 +64,12 @@ function App() {
 function Onboarding({onDone}:{onDone:(name:string,age?:AgeBand,guest?:boolean)=>void}) {
   const [name,setName]=useState(''); const [age,setAge]=useState<AgeBand|undefined>();
   const dialogRef=useRef<HTMLElement>(null);
-  useEffect(()=>{const dialog=dialogRef.current;if(!dialog)return;const handleKey=(event:KeyboardEvent)=>{if(event.key!=='Tab')return;const items=[...dialog.querySelectorAll<HTMLElement>('button:not([disabled]), input:not([disabled])')];if(!items.length)return;const first=items[0],last=items[items.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}};dialog.addEventListener('keydown',handleKey);return()=>dialog.removeEventListener('keydown',handleKey)},[]);
-  return <div className="modal-backdrop"><section ref={dialogRef} className="welcome-card" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+  useEffect(()=>{const dialog=dialogRef.current;if(!dialog)return;dialog.scrollTop=0;dialog.focus({preventScroll:true});const handleKey=(event:KeyboardEvent)=>{if(event.key!=='Tab')return;const items=[...dialog.querySelectorAll<HTMLElement>('button:not([disabled]), input:not([disabled])')];if(!items.length)return;const first=items[0],last=items[items.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}};dialog.addEventListener('keydown',handleKey);return()=>dialog.removeEventListener('keydown',handleKey)},[]);
+  return <div className="modal-backdrop"><section ref={dialogRef} className="welcome-card" role="dialog" aria-modal="true" aria-labelledby="welcome-title" tabIndex={-1}>
     <div className="welcome-art"><span>✦</span><div className="orbit orbit-one"></div><div className="orbit orbit-two"></div><div className="foundation-logo-crop welcome-logo-wrap"><img className="foundation-logo" src="/play-learn-foundation-logo.png" alt="Play & Learn Foundation"/></div></div>
     <form className="welcome-copy" onSubmit={event=>{event.preventDefault();if(name.trim())onDone(name.trim(),age,false)}}><span className="eyebrow">YOUR TECH ADVENTURE STARTS HERE</span><h1 id="welcome-title">Welcome to PAL Tech Learning Hub.</h1><p>Explore computers, code, networks and AI—one hands-on challenge at a time.</p>
       <label htmlFor="nickname">What should we call you? <small>A nickname is perfect. Don’t use your full legal name.</small></label>
-      <input id="nickname" value={name} onChange={e=>setName(e.target.value.slice(0,24))} placeholder="e.g. Ama" autoFocus/>
+      <input id="nickname" value={name} onChange={e=>setName(e.target.value.slice(0,24))} placeholder="e.g. Ama"/>
       <fieldset><legend>Choose your age group <span>(optional)</span></legend><div className="choice-row"><button type="button" aria-pressed={age==='9-11'} className={age==='9-11'?'selected':''} onClick={()=>setAge('9-11')}>9–11 years</button><button type="button" aria-pressed={age==='12-14'} className={age==='12-14'?'selected':''} onClick={()=>setAge('12-14')}>12–14 years</button></div></fieldset>
       <div className="privacy-note"><Info size={18}/><span>Your progress stays on this device. We never ask for email, phone number or location.</span></div>
       <div className="welcome-actions"><button className="primary" type="submit" disabled={!name.trim()}>Start exploring <ArrowRight size={19}/></button><button className="text-button" type="button" onClick={()=>onDone('Guest',age,true)}>Continue as Guest</button></div>
@@ -96,6 +97,7 @@ function LearnPage({progress,openModule}:{progress:ProgressState;openModule:(m:L
 
 function ModulePage({module,progress,update,back,goQuiz}:{module:LearningModule;progress:ProgressState;update:(p:ProgressState)=>void;back:()=>void;goQuiz:()=>void}) {
   const [active,setActive]=useState(0); const [choice,setChoice]=useState(''); const [checked,setChecked]=useState(false);
+  useEffect(()=>{window.scrollTo({top:0,left:0,behavior:'auto'})},[active,module.id]);
   const lesson=module.lessons[active]; const done=progress.completedLessons.includes(lesson.id); const correct=choice===lesson.answer;
   const complete=()=>{ if(!correct||done)return; update({...progress,completedLessons:[...progress.completedLessons,lesson.id],xp:progress.xp+25}); };
   const next=()=>{complete();setChoice('');setChecked(false);if(active<module.lessons.length-1){setActive(active+1);scrollTo({top:0,behavior:'smooth'})}};
@@ -112,6 +114,7 @@ function ModulePage({module,progress,update,back,goQuiz}:{module:LearningModule;
 
 function QuizPage({progress,update}:{progress:ProgressState;update:(p:ProgressState)=>void}) {
   const [topic,setTopic]=useState('mixed'); const [questions,setQuestions]=useState<Question[]>([]); const [index,setIndex]=useState(0); const [choice,setChoice]=useState(''); const [checked,setChecked]=useState(false); const [score,setScore]=useState(0); const [finished,setFinished]=useState(false);
+  useEffect(()=>{if(questions.length)window.scrollTo({top:0,left:0,behavior:'auto'})},[questions,index,finished]);
   const start=(id:string)=>{const pool=id==='mixed'?allQuestions:modules.find(m=>m.id===id)!.questions; setTopic(id);setQuestions([...pool].sort(()=>0.5-Math.random()).slice(0,5));setIndex(0);setScore(0);setChoice('');setChecked(false);setFinished(false)};
   if(!questions.length)return <section className="page content-section"><div className="page-intro"><span className="eyebrow">QUIZ ARENA</span><h1>Test what you know.</h1><p>No tricks and no penalties. Every answer comes with an explanation.</p></div><div className="quiz-picker"><button className="featured" onClick={()=>start('mixed')}><span>⚡</span><div><b>Mixed Tech Challenge</b><small>5 questions from across every lab</small></div><ArrowRight/></button>{modules.map(m=><button onClick={()=>start(m.id)} key={m.id}><span>{m.icon}</span><div><b>{m.shortTitle} checkpoint</b><small>5 questions • best score saved</small></div><ChevronRight/></button>)}</div></section>;
   const q=questions[index]; const isCorrect=choice===q.answer;
