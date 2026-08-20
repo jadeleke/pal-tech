@@ -46,7 +46,7 @@ function App() {
       <nav className="desktop-nav" aria-label="Main navigation">{navItems.map(item=><button className={view===item.id?'active':''} onClick={()=>go(item.id)} key={item.id}><item.icon size={18}/>{item.label}</button>)}</nav>
       <div className="top-actions"><span className={`status ${online?'online':''}`} role="status" aria-live="polite">{online?<Wifi size={15}/>:<CloudOff size={15}/>} {online?(offlineReady?'Ready without internet':'Getting lessons ready'):'No internet'}</span><button className="profile-chip" onClick={()=>go('progress')}><span>{progress.learner?.displayName?.[0]?.toUpperCase()||'G'}</span><b className="profile-name">{progress.learner?.displayName||'Guest'}</b></button><button className="menu-btn" onClick={()=>setMobileOpen(!mobileOpen)} aria-label={mobileOpen?'Close navigation':'Open navigation'}>{mobileOpen?<X/>:<Menu/>}</button></div>
     </header>
-    {mobileOpen&&<nav className="mobile-nav">{navItems.map(item=><button onClick={()=>go(item.id)} key={item.id}><item.icon size={18}/>{item.label}</button>)}</nav>}
+    <nav className={`mobile-nav ${mobileOpen?'open':''}`} aria-label="Mobile navigation">{navItems.map(item=><button className={view===item.id?'active':''} aria-current={view===item.id?'page':undefined} onClick={()=>go(item.id)} key={item.id}><item.icon size={18}/>{item.label}</button>)}</nav>
 
     <main>
       {view==='home'&&<HomePage progress={progress} overall={overall} openModule={openModule} go={go}/>} 
