@@ -2,7 +2,7 @@ import type { AgeBand, ProgressState, ProgressStore } from './types';
 
 export const STORAGE_KEY = 'pal-tech-progress-v1';
 export const STORE_KEY = 'pal-tech-profiles-v2';
-export const emptyProgress: ProgressState = { version: 2, learner: null, completedLessons: [], completedProjects: [], quizBest: {}, xp: 0, streak: 0 };
+export const emptyProgress: ProgressState = { version: 2, learner: null, completedLessons: [], completedProjects: [], completedGames: [], quizBest: {}, xp: 0, streak: 0 };
 
 const randomPart = () => Math.random().toString(36).slice(2, 6).toUpperCase();
 export function createProgress(displayName: string, ageBand?: AgeBand, isGuest = false): ProgressState {
@@ -18,6 +18,7 @@ function normalise(value: Partial<ProgressState>): ProgressState {
     learner:legacyLearner ? {id,displayName:String(legacyLearner.displayName||'Guest').slice(0,24),ageBand:legacyLearner.ageBand,isGuest:Boolean(legacyLearner.isGuest),learnerCode:legacyLearner.learnerCode||`PAL-${randomPart()}-${randomPart()}`} : null,
     completedLessons:Array.isArray(value.completedLessons)?value.completedLessons.filter((x):x is string=>typeof x==='string'):[],
     completedProjects:Array.isArray(value.completedProjects)?value.completedProjects.filter((x):x is string=>typeof x==='string'):[],
+    completedGames:Array.isArray(value.completedGames)?value.completedGames.filter((x):x is string=>typeof x==='string'):[],
     quizBest:value.quizBest&&typeof value.quizBest==='object'?value.quizBest:{}, xp:typeof value.xp==='number'?value.xp:0,
     streak:typeof value.streak==='number'?value.streak:0,lastLearningDate:typeof value.lastLearningDate==='string'?value.lastLearningDate:undefined
   };

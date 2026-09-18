@@ -39,6 +39,7 @@ export interface ProgressState {
   learner: { id: string; displayName: string; ageBand?: AgeBand; isGuest: boolean; learnerCode: string } | null;
   completedLessons: string[];
   completedProjects: string[];
+  completedGames: string[];
   quizBest: Record<string, number>;
   xp: number;
   streak: number;

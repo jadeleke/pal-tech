@@ -11,4 +11,6 @@ describe('progress logic',()=>{
   it('keeps independent learner profiles',()=>{const ama=createProgress('Ama');const kojo=createProgress('Kojo');const store=addProfile(addProfile({version:2,activeId:null,profiles:{}},ama),kojo);expect(Object.keys(store.profiles)).toHaveLength(2);expect(store.profiles[ama.learner!.id].learner?.displayName).toBe('Ama')});
   it('exports and restores a private device backup',()=>{const ama=createProgress('Ama');const store=addProfile({version:2,activeId:null,profiles:{}},ama);expect(importStore(exportStore(store))?.profiles[ama.learner!.id].learner?.displayName).toBe('Ama')});
   it('increments a consecutive learning streak',()=>{const result=learningStreak({...emptyProgress,streak:2,lastLearningDate:'2026-08-21'},new Date('2026-08-22T12:00:00Z'));expect(result.streak).toBe(3)});
+  it('starts new learner profiles with no completed games',()=>expect(createProgress('Esi').completedGames).toEqual([]));
+  it('adds an empty game list when restoring an older backup',()=>{const restored=importStore(JSON.stringify({version:2,activeId:'old',profiles:{old:{...emptyProgress,completedGames:undefined,learner:{id:'old',displayName:'Old learner',isGuest:false,learnerCode:'PAL-OLD'}}}}));expect(restored?.profiles.old.completedGames).toEqual([])});
 });

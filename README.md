@@ -23,6 +23,7 @@ pnpm preview
 - Eight learning labs covering computers, algorithms, flowcharts, JavaScript, networks, AI, safety and practical digital skills
 - Guided learning pattern: discover, learn, see, try, check, challenge and reflect
 - Topic and mixed quizzes with explanatory feedback and retry
+- Two offline-friendly Scratch-style games with touch controls, code blocks and saved completion rewards
 - Eight independent project prompts
 - Multiple private device-local learner profiles, learning points, streaks, project completion, scores and badges
 - Facilitator dashboard with progress summaries and encrypted-transport-friendly JSON backup/restore
