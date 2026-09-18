@@ -21,7 +21,22 @@ export const modules: LearningModule[] = [
       ['A touchscreen can be…',['Only input','Only output','Both input and output'],'Both input and output','It displays information and receives touches.'],
       ['What happens during processing?',['The computer follows instructions','The screen turns off','A file is printed'],'The computer follows instructions','Processing means working on input according to instructions.'],
       ['Which stores files long-term?',['Storage drive','Mouse','Speaker'],'Storage drive','A storage drive keeps files after shutdown.'],
-      ['Early computers using vacuum tubes were generally…',['Large and power-hungry','Pocket-sized','Wireless'],'Large and power-hungry','Vacuum-tube machines filled rooms and used much power.']
+      ['Early computers using vacuum tubes were generally…',['Large and power-hungry','Pocket-sized','Wireless'],'Large and power-hungry','Vacuum-tube machines filled rooms and used much power.'],
+      ['Which device sends sound into a computer?',['Microphone','Monitor','Projector'],'Microphone','A microphone captures sound as input.'],
+      ['What is the main job of memory while a program runs?',['Hold working data','Print documents','Connect a network'],'Hold working data','Memory keeps the information a program is actively using.'],
+      ['Which part carries out program instructions?',['Processor','Keyboard','Speaker'],'Processor','The processor executes the instructions in a program.'],
+      ['What is an example of computer output?',['A picture shown on a screen','A key being pressed','A mouse being moved'],'A picture shown on a screen','The screen presents processed information as output.'],
+      ['Which sequence includes storage?',['Input → Process → Store → Output','Output → Store → Input','Store → Output → Process'],'Input → Process → Store → Output','A computer may store processed information before or after producing an output.'],
+      ['Which device is mainly an output device?',['Speaker','Mouse','Scanner'],'Speaker','A speaker presents sound produced by the computer.'],
+      ['Which device can scan a paper picture into a computer?',['Scanner','Monitor','Printer'],'Scanner','A scanner captures the picture as input.'],
+      ['What usually happens to unsaved work held only in memory when power is lost?',['It may disappear','It becomes a printed page','It moves to the keyboard'],'It may disappear','Working memory normally needs power to keep its contents.'],
+      ['What is hardware?',['The physical parts of a computer','Instructions and apps only','A website password'],'The physical parts of a computer','Hardware includes parts you can physically touch.'],
+      ['What is software?',['Programs and instructions','The computer desk','A charging cable'],'Programs and instructions','Software tells computer hardware what tasks to perform.'],
+      ['Which connection can be used to attach a flash drive?',['USB port','Speaker cone','Screen pixel'],'USB port','A USB port connects compatible external devices.'],
+      ['Why was the microprocessor important?',['It made powerful computers smaller','It made computers use paper','It removed all storage'],'It made powerful computers smaller','Putting processing functions on a compact chip helped shrink computers.'],
+      ['Which action is input?',['Clicking a mouse button','Hearing sound from speakers','Seeing text on a monitor'],'Clicking a mouse button','The click sends information into the computer.'],
+      ['Which action is output?',['A printer producing a page','Typing on a keyboard','Speaking into a microphone'],'A printer producing a page','The printed page is information produced by the computer.'],
+      ['Why does a computer need instructions?',['To know what operations to perform','To become a person','To work without any input'],'To know what operations to perform','Computers process data by following defined instructions.']
     ])
   },
   {
@@ -39,7 +54,22 @@ export const modules: LearningModule[] = [
       ['Why can “make breakfast” fail as a robot instruction?',['It is too vague','It is too colourful','It has a verb'],'It is too vague','The robot needs exact actions and order.'],
       ['What does a decision do?',['Chooses a path based on a condition','Deletes every step','Always repeats'],'Chooses a path based on a condition','A decision checks something and selects a path.'],
       ['Which sequence is sensible?',['Wash hands → eat','Eat → prepare food','Leave school → arrive at school'],'Wash hands → eat','Handwashing should happen before eating.'],
-      ['A finite algorithm…',['Has an ending','Never stops','Has no goal'],'Has an ending','Finite means it completes after a limited number of steps.']
+      ['A finite algorithm…',['Has an ending','Never stops','Has no goal'],'Has an ending','Finite means it completes after a limited number of steps.'],
+      ['Which instruction is most precise?',['Move forward three steps','Go somewhere','Do it properly'],'Move forward three steps','It gives a clear action and an exact amount.'],
+      ['What is sequence in an algorithm?',['The order of steps','The colour of steps','The device used'],'The order of steps','Sequence describes which instruction comes first, next and last.'],
+      ['Which instruction creates controlled repetition?',['Repeat 4 times','Repeat forever','Maybe repeat'],'Repeat 4 times','A fixed number makes the repetition clear and finite.'],
+      ['What should an algorithm begin with?',['A clear goal or starting point','A random ending','An unknown result'],'A clear goal or starting point','A useful algorithm starts from a defined situation and works toward a goal.'],
+      ['If it is raining, carry an umbrella. This is an example of…',['A decision','Storage','Output'],'A decision','The action depends on whether the condition is true.'],
+      ['What does it mean to debug an algorithm?',['Find and fix problems in its steps','Decorate the instructions','Delete the goal'],'Find and fix problems in its steps','Debugging improves steps that are missing, unclear or in the wrong order.'],
+      ['Which step should come first when making tea?',['Put water in the kettle','Drink the tea','Wash the empty cup afterward'],'Put water in the kettle','The water must be prepared before the drink can be finished.'],
+      ['A condition in an algorithm is…',['A test that can affect the next step','A picture used as decoration','The final file name'],'A test that can affect the next step','Conditions determine which path the algorithm follows.'],
+      ['Which phrase describes a loop?',['Repeat these steps','Choose between two paths','End immediately'],'Repeat these steps','A loop performs one or more instructions again.'],
+      ['Why test an algorithm with different inputs?',['To check that it works in different cases','To make it longer','To remove every decision'],'To check that it works in different cases','Different inputs can reveal missing steps or incorrect decisions.'],
+      ['What should happen when an instruction is unclear?',['Rewrite it more precisely','Leave it vague','Add unrelated steps'],'Rewrite it more precisely','Precise instructions reduce misunderstanding.'],
+      ['Which is a valid ending for a search algorithm?',['Item found or no items left','Search forever','Start again without a reason'],'Item found or no items left','The algorithm ends after success or after checking every possible item.'],
+      ['Breaking a large problem into smaller parts is called…',['Decomposition','Output','Storage'],'Decomposition','Smaller parts are easier to understand and solve.'],
+      ['Which algorithm is more efficient?',['One that reaches the correct result with fewer unnecessary steps','One that repeats every step forever','One with no clear result'],'One that reaches the correct result with fewer unnecessary steps','Efficiency avoids work that does not help reach the correct goal.'],
+      ['What makes an everyday recipe similar to an algorithm?',['It gives ordered steps toward a result','It always uses a computer','It has no ending'],'It gives ordered steps toward a result','A recipe is a sequence of instructions that produces an outcome.']
     ])
   },
   {
@@ -56,7 +86,22 @@ export const modules: LearningModule[] = [
       ['A process uses which shape?',['Rectangle','Oval','Diamond'],'Rectangle','A rectangle contains an action or process.'],
       ['Input/Output uses…',['Parallelogram','Circle','Star'],'Parallelogram','The slanted parallelogram is the standard I/O symbol.'],
       ['Decision branches should be…',['Labelled YES/NO','Hidden','The same line'],'Labelled YES/NO','Labels make each outcome clear.'],
-      ['What converts naturally to if/else?',['A decision','A title','An arrow colour'],'A decision','An if/else represents two decision paths in code.']
+      ['What converts naturally to if/else?',['A decision','A title','An arrow colour'],'A decision','An if/else represents two decision paths in code.'],
+      ['What do arrows connect in a flowchart?',['Steps in their flow order','Only titles','Unrelated pictures'],'Steps in their flow order','Arrows show where the process goes next.'],
+      ['Which shape contains an action such as “Add the numbers”?',['Rectangle','Diamond','Oval'],'Rectangle','A rectangle represents a process or action.'],
+      ['Where should “Enter your score” appear?',['Parallelogram','Oval','Diamond'],'Parallelogram','Entering data is an input operation.'],
+      ['What is wrong with a decision that has no NO path?',['One possible result has nowhere to go','It has too many endings','It uses an arrow'],'One possible result has nowhere to go','Every possible decision result needs a defined path.'],
+      ['A complete flowchart should normally have…',['A clear Start and End','Only decisions','No arrows'],'A clear Start and End','Start and End boundaries make the process complete and understandable.'],
+      ['Which symbol should contain “Is the score at least 70?”',['Diamond','Rectangle','Oval'],'Diamond','The question creates different paths based on its answer.'],
+      ['Which symbol should contain “Calculate the total”?',['Rectangle','Parallelogram','Oval'],'Rectangle','A calculation is a process or action.'],
+      ['Which symbol should contain “Display the result”?',['Parallelogram','Diamond','Oval'],'Parallelogram','Displaying information is an output operation.'],
+      ['What does tracing a flowchart mean?',['Following its arrows step by step','Changing every shape','Removing the Start'],'Following its arrows step by step','Tracing checks the route that a particular input will take.'],
+      ['Can an arrow return to an earlier step?',['Yes, to show repetition','No, never','Only from Start'],'Yes, to show repetition','A returning arrow can create a controlled loop.'],
+      ['What should appear on the two exits from a yes-or-no decision?',['YES and NO labels','Two Start labels','File names'],'YES and NO labels','The labels show which result follows each arrow.'],
+      ['Why use standard flowchart shapes?',['They make diagrams easier to understand','They make decisions disappear','They replace all arrows'],'They make diagrams easier to understand','Standard symbols give readers a shared visual language.'],
+      ['What should you check if a flowchart never reaches End?',['Whether a path loops forever','Whether the title is colourful','Whether it has a picture'],'Whether a path loops forever','An uncontrolled loop can prevent the flow from finishing.'],
+      ['Two branches may join again before…',['A shared next step','A second Start','Deleting the process'],'A shared next step','Different paths can reconnect when they continue with the same action.'],
+      ['Which flow is correctly ordered?',['Start → Input → Process → Output → End','Output → End → Start','Decision → Start → Input'],'Start → Input → Process → Output → End','The flow begins, receives data, processes it, shows a result and ends.']
     ])
   },
   {
@@ -73,7 +118,22 @@ export const modules: LearningModule[] = [
       ['Which declares a changing value?',['let','const','string'],'let','let is for bindings intended to be reassigned.'],
       ['What type is "12"?',['String','Number','Boolean'],'String','Quotation marks make it text, even when the characters are digits.'],
       ['What does === compare?',['Whether values are equal in value and type','Adds values','Starts a loop'],'Whether values are equal in value and type','Strict equality checks both value and type.'],
-      ['A for loop is useful for…',['Repetition','Storing files','Connecting Wi-Fi'],'Repetition','Loops repeat instructions in a controlled way.']
+      ['A for loop is useful for…',['Repetition','Storing files','Connecting Wi-Fi'],'Repetition','Loops repeat instructions in a controlled way.'],
+      ['Which value is a Boolean?',['true','"true"','42'],'true','Without quotation marks, true is a Boolean value.'],
+      ['Which declaration suits a name that should not be reassigned?',['const','let','loop'],'const','const is appropriate when the binding should stay the same.'],
+      ['What runs when an if condition is false?',['The else branch','The same if block','A file download'],'The else branch','else provides the alternative path when the condition is false.'],
+      ['What will console.log(3 + 2) display?',['5','3 + 2','Nothing'],'5','The addition is evaluated before the result is printed.'],
+      ['Why do programmers test code?',['To find mistakes and confirm behaviour','To make the screen brighter','To rename the keyboard'],'To find mistakes and confirm behaviour','Testing checks whether the program behaves as intended.'],
+      ['Which value is a number?',['12','"twelve"','false'],'12','A numeric value without quotation marks is a number.'],
+      ['Which value is a string?',['"Ama"','25','true'],'"Ama"','Quotation marks identify the value as text.'],
+      ['What does let score = 4 create?',['A variable named score with value 4','A file named score','A four-step loop'],'A variable named score with value 4','let declares a variable and assigns its starting value.'],
+      ['What does score = score + 1 do?',['Increases score by one','Turns score into text','Stops the program'],'Increases score by one','The new value is the old score plus one.'],
+      ['Which condition is true when age is 10?',['age >= 9','age < 5','age === 14'],'age >= 9','Ten is greater than or equal to nine.'],
+      ['What is a bug in code?',['A mistake that causes unwanted behaviour','A computer mouse','A saved document'],'A mistake that causes unwanted behaviour','Programmers debug code to find and fix such mistakes.'],
+      ['Why are quotation marks important around text?',['They tell the program it is a string','They add two numbers','They start Wi-Fi'],'They tell the program it is a string','Text literals are written inside quotation marks.'],
+      ['Which line prints the value stored in name?',['console.log(name)','name === log','print = name only'],'console.log(name)','Passing the variable to console.log displays its current value.'],
+      ['What should a controlled loop include?',['A clear stopping condition or count','No ending','Only a password'],'A clear stopping condition or count','A stopping rule prevents unintended endless repetition.'],
+      ['Why use meaningful variable names?',['They make code easier to understand','They make the device heavier','They remove all conditions'],'They make code easier to understand','Names such as score explain what a stored value represents.']
     ])
   },
   {
@@ -90,7 +150,22 @@ export const modules: LearningModule[] = [
       ['What connects networks?',['Router','Keyboard','Switch only'],'Router','Routers direct traffic between networks.'],
       ['A star topology has…',['A central connection point','One long shared cable only','No connections'],'A central connection point','Every endpoint connects to the central switch or access point.'],
       ['If the star switch fails…',['Normal communication stops','Only one PC notices','Internet becomes Wi-Fi'],'Normal communication stops','The centre is a single point of failure.'],
-      ['A client usually…',['Requests a service','Connects every network','Prints every page'],'Requests a service','Clients ask servers for data or services.']
+      ['A client usually…',['Requests a service','Connects every network','Prints every page'],'Requests a service','Clients ask servers for data or services.'],
+      ['Which device connects computers inside one local network?',['Switch','Keyboard','Projector'],'Switch','A switch links endpoints within a LAN.'],
+      ['What does LAN stand for?',['Local Area Network','Large Access Node','Linked Application Number'],'Local Area Network','A LAN covers a limited local area such as a room or school.'],
+      ['Can two devices share files on Wi-Fi when the internet is down?',['Yes, if the local network still works','No, never','Only with a printer'],'Yes, if the local network still works','Wi-Fi can connect local devices without an active internet connection.'],
+      ['In a star network, each computer connects to…',['The central switch or access point','Every other computer directly','No central device'],'The central switch or access point','The centre manages the individual links in a star.'],
+      ['A server usually…',['Provides data or a service','Types on a keyboard','Draws network cables'],'Provides data or a service','Servers respond to requests from clients.'],
+      ['What is an endpoint on a network?',['A connected device such as a computer','A type of password','The colour of a cable'],'A connected device such as a computer','Endpoints send or receive data on the network.'],
+      ['Which network usually covers the larger area?',['WAN','LAN','One USB cable'],'WAN','A WAN connects networks across towns, countries or greater distances.'],
+      ['What does a router decide?',['Where traffic should go between networks','What keys are typed','How loud speakers sound'],'Where traffic should go between networks','Routers forward data toward other networks.'],
+      ['What does a switch learn to help deliver local traffic?',['Which devices are connected to its ports','Every user password','The monitor brightness'],'Which devices are connected to its ports','A switch uses device addresses to forward local network traffic.'],
+      ['Why might a wired connection be useful?',['It can provide a stable local link','It guarantees every website is true','It removes the need for a network'],'It can provide a stable local link','Network cables can offer reliable connections between devices.'],
+      ['What is Wi-Fi?',['A wireless way to join a network','The whole internet','A type of document'],'A wireless way to join a network','Wi-Fi connects devices to a local network without a cable.'],
+      ['If one computer cable fails in a star, what usually happens?',['That computer disconnects while others continue','Every network in the world stops','The switch becomes a keyboard'],'That computer disconnects while others continue','Each endpoint has its own link to the central device.'],
+      ['Which service translates website names into network addresses?',['DNS','Word','Bluetooth speaker'],'DNS','DNS helps devices find the address associated with a domain name.'],
+      ['What are small pieces of network data commonly called?',['Packets','Slides','Cells'],'Packets','Network messages are divided into packets for transmission.'],
+      ['Why do networks use rules called protocols?',['So devices communicate in agreed ways','So every device has the same colour','So files never need names'],'So devices communicate in agreed ways','Protocols define how data is formatted, sent and received.']
     ])
   },
   {
@@ -107,7 +182,22 @@ export const modules: LearningModule[] = [
       ['Confidence means…',['How strongly a model prefers a prediction','The answer is certainly true','The AI has feelings'],'How strongly a model prefers a prediction','Confidence is a score, not a guarantee of correctness.'],
       ['Why use varied data?',['To work across more real situations','To make files colourful','To remove testing'],'To work across more real situations','Variation helps prevent narrow pattern learning.'],
       ['Training and testing data should…',['Check learning fairly','Always be identical','Contain passwords'],'Check learning fairly','Testing on separate examples reveals how well learning generalises.'],
-      ['Responsible AI use includes…',['Checking important claims','Sharing private data','Assuming no mistakes'],'Checking important claims','Verification matters because AI can be wrong.']
+      ['Responsible AI use includes…',['Checking important claims','Sharing private data','Assuming no mistakes'],'Checking important claims','Verification matters because AI can be wrong.'],
+      ['What is a prediction in AI?',['A model’s estimated answer','A guaranteed fact','A human password'],'A model’s estimated answer','A prediction is the model’s best estimate based on learned patterns.'],
+      ['What can happen when training data misses some groups?',['The system may work unfairly for them','The model becomes perfect','Testing is unnecessary'],'The system may work unfairly for them','Missing representation can lead to uneven performance.'],
+      ['Why should test examples be separate from training examples?',['To check performance on new data','To repeat memorised answers','To increase screen brightness'],'To check performance on new data','Separate testing shows how well the model handles unseen examples.'],
+      ['An AI answer sounds confident. What does that prove?',['Nothing about whether it is correct','That it must be true','That a human checked it'],'Nothing about whether it is correct','Confident language or a high score is not proof of truth.'],
+      ['Which is a responsible way to use an AI image tool?',['Avoid entering private photos without permission','Upload every class photo','Ignore consent'],'Avoid entering private photos without permission','Privacy and consent still matter when using AI tools.'],
+      ['What is training data used for?',['Helping a model learn patterns','Charging the computer','Printing every answer'],'Helping a model learn patterns','Models learn statistical relationships from training examples.'],
+      ['What is an AI model?',['A system learned from data to make outputs or predictions','A guaranteed source of truth','A human teacher inside a computer'],'A system learned from data to make outputs or predictions','A model applies learned patterns to new inputs.'],
+      ['Why can an AI make a mistake on a new example?',['Its learned patterns may not fit that example','Computers cannot use data','Every answer is random'],'Its learned patterns may not fit that example','New situations may differ from the data used for training.'],
+      ['What does bias in an AI result mean?',['The result may unfairly favour or disadvantage some groups','The screen is tilted','The model has a personal opinion'],'The result may unfairly favour or disadvantage some groups','Data and design choices can create uneven outcomes.'],
+      ['Which person should remain responsible for an important decision?',['A qualified human','The AI alone','An unknown website'],'A qualified human','Human review is important when decisions affect people.'],
+      ['What is a good way to verify an AI claim?',['Compare it with reliable independent sources','Ask the AI to repeat it','Judge only by confidence'],'Compare it with reliable independent sources','Independent evidence helps confirm whether a claim is accurate.'],
+      ['Should private personal data be pasted into a public AI tool?',['No, unless an approved process clearly permits it','Yes, always','Only if the answer is short'],'No, unless an approved process clearly permits it','Protect personal information and follow approved privacy rules.'],
+      ['Why document where AI was used in a project?',['To be transparent about how the work was made','To hide mistakes','To remove human responsibility'],'To be transparent about how the work was made','Transparency helps others understand and evaluate the process.'],
+      ['What is human oversight?',['A person reviews and can correct an AI-supported result','The AI checks itself only','Nobody checks the result'],'A person reviews and can correct an AI-supported result','Oversight keeps people responsible for important outcomes.'],
+      ['Which dataset is most suitable for recognising many kinds of Ghanaian fruit?',['Varied labelled images of those fruits in different conditions','One image of one fruit','Unrelated pictures without labels'],'Varied labelled images of those fruits in different conditions','Relevant variety helps the model learn features that generalise.']
     ])
   },
   {
@@ -124,7 +214,22 @@ export const modules: LearningModule[] = [
       ['A strong password should be…',['Long and unique','Your name','Shared widely'],'Long and unique','Length and uniqueness make passwords harder to guess and reuse.'],
       ['A suspicious link arrives. First…',['Stop and check','Click quickly','Send your password'],'Stop and check','A pause gives you time to inspect and ask for help.'],
       ['Before sharing someone’s photo…',['Ask permission','Assume consent','Add their location'],'Ask permission','People should control how their image is shared.'],
-      ['A digital footprint is…',['The trail of online activity','A shoe size','A computer cable'],'The trail of online activity','Posts and actions can leave lasting records.']
+      ['A digital footprint is…',['The trail of online activity','A shoe size','A computer cable'],'The trail of online activity','Posts and actions can leave lasting records.'],
+      ['Which message is most likely suspicious?',['“Urgent! Send your password to win”','“Class begins at 10” from your teacher','“Please close the door”'],'“Urgent! Send your password to win”','Urgency, prizes and requests for passwords are common warning signs.'],
+      ['What should you do if an online message makes you uncomfortable?',['Tell a trusted adult','Keep it secret','Reply with private details'],'Tell a trusted adult','A trusted adult can help you respond safely.'],
+      ['Why should each account use a different password?',['One leak will not unlock every account','It makes passwords shorter','Friends can guess them'],'One leak will not unlock every account','Unique passwords limit the damage if one account is compromised.'],
+      ['Which detail is safest to use publicly in this learning app?',['A nickname','A home address','A real password'],'A nickname','A nickname supports learning without revealing unnecessary personal information.'],
+      ['What is the safest response to a prize link from an unknown sender?',['Do not open it and ask for help','Open it immediately','Forward it to friends'],'Do not open it and ask for help','Unexpected prize links may be attempts to steal information.'],
+      ['What is phishing?',['A trick designed to steal information','A safe way to share passwords','A computer drawing tool'],'A trick designed to steal information','Phishing messages imitate trusted sources to pressure people into revealing data.'],
+      ['Which passphrase is generally safer?',['Several unrelated memorable words','123456','Your first name'],'Several unrelated memorable words','A long unique passphrase is harder to guess.'],
+      ['What does multi-factor authentication add?',['Another proof of identity','A public password list','A shorter username'],'Another proof of identity','A second factor protects an account even if a password is exposed.'],
+      ['What should you do after accidentally sharing a password?',['Tell a trusted adult and change it promptly','Post it again','Ignore it forever'],'Tell a trusted adult and change it promptly','Quick action can reduce the chance of account misuse.'],
+      ['Which information can reveal your location?',['A photo showing a street sign near home','A favourite colour','A made-up nickname'],'A photo showing a street sign near home','Background details in photos can reveal where someone is.'],
+      ['What should you do with repeated hurtful messages online?',['Save evidence, block or report, and tell a trusted adult','Reply with your password','Meet the sender alone'],'Save evidence, block or report, and tell a trusted adult','Reporting and trusted support are safer than handling harassment alone.'],
+      ['Why install trusted security updates?',['They can fix known weaknesses','They make passwords public','They remove all files'],'They can fix known weaknesses','Updates often repair problems that attackers could misuse.'],
+      ['Which download is safest?',['One from an approved trusted source','An unknown attachment promising a prize','A file that asks you to disable protection'],'One from an approved trusted source','Trusted sources reduce the risk of harmful files.'],
+      ['What is consent when sharing a photo?',['Clear permission from the person or guardian when required','Silence from the person','Posting before asking'],'Clear permission from the person or guardian when required','People should understand and agree before their image is shared.'],
+      ['What does “Stop, Think, Check, Ask” help you do?',['Respond safely to uncertain online situations','Create a weak password','Share faster without checking'],'Respond safely to uncertain online situations','The steps create time to examine risk and seek help.']
     ])
   },
   {
@@ -141,7 +246,22 @@ export const modules: LearningModule[] = [
       ['A spreadsheet cell is where…',['A row and column meet','Slides are stored','A password is shared'],'A row and column meet','Each cell has a column letter and row number.'],
       ['What does SUM do?',['Adds values','Finds the mean','Makes text bold'],'Adds values','SUM calculates a total.'],
       ['A clear slide should use…',['Concise text','A full essay','Tiny fonts'],'Concise text','Slides support the speaker with focused ideas.'],
-      ['Why use descriptive file names?',['To find work later','To use more storage','To change the font'],'To find work later','Clear names make organising and retrieving work easier.']
+      ['Why use descriptive file names?',['To find work later','To use more storage','To change the font'],'To find work later','Clear names make organising and retrieving work easier.'],
+      ['Which Excel formula finds the mean of B2 to B5?',['=AVERAGE(B2:B5)','=SUM(B2:B5)','=MEAN(B2-B5)'],'=AVERAGE(B2:B5)','AVERAGE calculates the arithmetic mean of the selected cells.'],
+      ['What makes a document title easy to recognise?',['A larger clear heading','Tiny grey text','No spacing'],'A larger clear heading','A clear heading creates useful visual hierarchy.'],
+      ['Which presentation choice improves consistency?',['Use the same fonts and colours throughout','Change every slide style','Use as many fonts as possible'],'Use the same fonts and colours throughout','Consistent design helps the audience follow the message.'],
+      ['When should you save your work?',['Regularly while working','Only after closing the app','Never'],'Regularly while working','Saving regularly reduces the chance of losing progress.'],
+      ['Which chart is useful for comparing several topic scores?',['Bar or column chart','A text paragraph','A password box'],'Bar or column chart','Bars make differences between category values easy to compare.'],
+      ['Which Word feature creates an organised list?',['Bullets or numbering','A spreadsheet formula','Slide transition'],'Bullets or numbering','Lists make related points easier to scan.'],
+      ['What does cell B3 mean in Excel?',['Column B, row 3','Book 3, page B','Bar chart number 3'],'Column B, row 3','Cell references combine a column letter and row number.'],
+      ['Which formula adds values from A1 through A5?',['=SUM(A1:A5)','=ADD(A1-A5)','=TOTAL(A1)'],'=SUM(A1:A5)','SUM with a colon includes every cell in the range.'],
+      ['Why include a chart title?',['To explain what the chart shows','To hide the data','To replace every label'],'To explain what the chart shows','A clear title gives the audience context.'],
+      ['What should one presentation slide focus on?',['One clear main idea','Every detail in the project','Several unrelated topics'],'One clear main idea','A focused slide is easier for the audience to understand.'],
+      ['Which file extension is commonly used for a PowerPoint presentation?',['.pptx','.xlsx','.txt only'],'.pptx','.pptx is the standard modern PowerPoint presentation format.'],
+      ['Which file extension is commonly used for an Excel workbook?',['.xlsx','.docx','.png'],'.xlsx','.xlsx is the standard modern Excel workbook format.'],
+      ['What should you do before submitting a document?',['Proofread it and confirm it is saved','Delete the title','Change every font'],'Proofread it and confirm it is saved','A final review catches errors and confirms the correct file is ready.'],
+      ['Why organise related files in one clearly named folder?',['They are easier to find and manage','They automatically become public','They no longer need saving'],'They are easier to find and manage','Good organisation reduces lost or confused files.'],
+      ['Which visual is most useful in a slide?',['One that supports the message','A random image','A tiny unreadable screenshot'],'One that supports the message','Relevant visuals help explain the slide’s main idea.']
     ])
   }
 ];

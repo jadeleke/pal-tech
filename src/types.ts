@@ -36,8 +36,17 @@ export interface LearningModule {
 
 export interface ProgressState {
   version: number;
-  learner: { displayName: string; ageBand?: AgeBand; isGuest: boolean } | null;
+  learner: { id: string; displayName: string; ageBand?: AgeBand; isGuest: boolean; learnerCode: string } | null;
   completedLessons: string[];
+  completedProjects: string[];
   quizBest: Record<string, number>;
   xp: number;
+  streak: number;
+  lastLearningDate?: string;
+}
+
+export interface ProgressStore {
+  version: number;
+  activeId: string | null;
+  profiles: Record<string, ProgressState>;
 }

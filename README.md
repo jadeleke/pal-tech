@@ -1,6 +1,6 @@
 # PAL Tech Learning Hub
 
-An offline-first technology learning application for children aged 9–14, created for the Play & Learn Foundation. The app is frontend-only: it has no accounts, backend, analytics, advertising or cloud data collection.
+An offline-first technology learning application for children aged 9–14, created for the Play & Learn Foundation. The app is frontend-only: it has no required accounts, analytics, advertising or cloud data collection.
 
 ## Run locally
 
@@ -24,14 +24,16 @@ pnpm preview
 - Guided learning pattern: discover, learn, see, try, check, challenge and reflect
 - Topic and mixed quizzes with explanatory feedback and retry
 - Eight independent project prompts
-- Device-local learner profile, progress, XP, best scores and nine explicit badges
-- Facilitator guidance and confirmed learner-data reset
+- Multiple private device-local learner profiles, learning points, streaks, project completion, scores and badges
+- Facilitator dashboard with progress summaries and encrypted-transport-friendly JSON backup/restore
+- Read-aloud controls, child-friendly celebrations, focused mobile lesson navigation and lab search
+- Privacy-safe Cohort showcase scaffold awaiting approved participant stories and media
 - Installable PWA with offline application-shell and content caching
 - Responsive, keyboard-accessible UI with reduced-motion support
 
 ## Privacy and storage
 
-The learner may enter a nickname and optional age band. This, along with learning progress, is stored only in browser `localStorage` under `pal-tech-progress-v1`. The app does not request a full name, date of birth, email, phone number, address, location, camera or microphone.
+The learner may enter a nickname of up to 16 characters and an optional age band. Profiles and progress are stored only in browser `localStorage` under `pal-tech-profiles-v2`. A facilitator can explicitly download and restore a private backup. The app does not request a full name, date of birth, email, phone number, address, location, camera or microphone.
 
 ## Offline use
 
