@@ -1,11 +1,12 @@
 import type { LearningModule, Question } from './types';
+import { expandLessons } from './lessonExpansion';
 
 const makeQuestions = (moduleId: string, items: Array<[string, string[], string, string]>): Question[] =>
   items.map(([prompt, choices, answer, explanation], index) => ({
     id: `${moduleId}-q${index + 1}`, moduleId, prompt, choices, answer, explanation
   }));
 
-export const modules: LearningModule[] = [
+const foundationModules: LearningModule[] = [
   {
     id: 'computer', title: 'Computer Explorer', shortTitle: 'Computers', icon: '🖥️', colour: '#277da1',
     description: 'Discover how computers take input, process information and create output.',
@@ -266,6 +267,8 @@ export const modules: LearningModule[] = [
   }
 ];
 
+export const modules = foundationModules.map(expandLessons);
+export const totalLessons = modules.reduce((total, module) => total + module.lessons.length, 0);
 export const allQuestions = modules.flatMap((module) => module.questions);
 
 export const projects = [

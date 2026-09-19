@@ -1,0 +1,5 @@
+/* Twenty reachable lesson targets without horizontal page overflow. */
+.lesson-steps{flex-wrap:wrap;max-width:100%}
+.lesson-steps button{flex:0 0 44px;width:44px;height:44px}
+.lesson-nav{max-height:70vh;overflow-y:auto;overscroll-behavior:contain}
+@media(max-width:600px){.lesson-steps{gap:8px}.lesson-nav{max-height:none}}
