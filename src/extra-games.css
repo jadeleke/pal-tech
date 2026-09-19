@@ -1,0 +1,13 @@
+.challenge-stage{background:#fffdf6;border:1px solid #dbe6d8;border-radius:18px;padding:24px;min-width:0}
+.challenge-stage h3{font-size:1.2rem;line-height:1.5;margin:12px 0;color:#17451f}
+.challenge-count{font-weight:700;color:#17451f}
+.challenge-scene{font-size:clamp(1.4rem,4vw,2.3rem);text-align:center;padding:18px 0;overflow-wrap:anywhere}
+.challenge-choices{display:grid;gap:10px;margin:18px 0}
+.challenge-choices button{min-height:48px;border:2px solid #b8cbb2;border-radius:12px;background:white;padding:12px;text-align:left;font-weight:700;color:#17451f;white-space:normal}
+.challenge-choices button.right{background:#e0f4db;border-color:#277f21;opacity:1}
+.challenge-choices button.retry{background:#fff0da;border-color:#b17600}
+.challenge-feedback{line-height:1.6;font-size:.95rem}
+.challenge-welcome{text-align:center;padding:20px 0;line-height:1.6}
+.challenge-welcome>span{font-size:3rem}
+.extra-game .scratch-block{overflow-wrap:anywhere}
+@media(max-width:480px){.challenge-stage{padding:16px}.challenge-scene{font-size:1.5rem}}
