@@ -20,7 +20,8 @@ function normalise(value: Partial<ProgressState>): ProgressState {
     completedProjects:Array.isArray(value.completedProjects)?value.completedProjects.filter((x):x is string=>typeof x==='string'):[],
     completedGames:Array.isArray(value.completedGames)?value.completedGames.filter((x):x is string=>typeof x==='string'):[],
     quizBest:value.quizBest&&typeof value.quizBest==='object'?value.quizBest:{}, xp:typeof value.xp==='number'?value.xp:0,
-    streak:typeof value.streak==='number'?value.streak:0,lastLearningDate:typeof value.lastLearningDate==='string'?value.lastLearningDate:undefined
+    streak:typeof value.streak==='number'?value.streak:0,lastLearningDate:typeof value.lastLearningDate==='string'?value.lastLearningDate:undefined,
+    lastLesson:value.lastLesson && typeof value.lastLesson.moduleId==='string' && typeof value.lastLesson.lessonId==='string' ? value.lastLesson : undefined
   };
 }
 

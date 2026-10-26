@@ -44,6 +44,7 @@ export interface ProgressState {
   xp: number;
   streak: number;
   lastLearningDate?: string;
+  lastLesson?: { moduleId: string; lessonId: string };
 }
 
 export interface ProgressStore {
