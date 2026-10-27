@@ -13,4 +13,15 @@ describe('progress logic',()=>{
   it('increments a consecutive learning streak',()=>{const result=learningStreak({...emptyProgress,streak:2,lastLearningDate:'2026-08-21'},new Date('2026-08-22T12:00:00Z'));expect(result.streak).toBe(3)});
   it('starts new learner profiles with no completed games',()=>expect(createProgress('Esi').completedGames).toEqual([]));
   it('adds an empty game list when restoring an older backup',()=>{const restored=importStore(JSON.stringify({version:2,activeId:'old',profiles:{old:{...emptyProgress,completedGames:undefined,learner:{id:'old',displayName:'Old learner',isGuest:false,learnerCode:'PAL-OLD'}}}}));expect(restored?.profiles.old.completedGames).toEqual([])});
+  it('rejects malformed and oversized backups without restoring profiles',()=>{
+    for(const value of [null,{version:2,profiles:[]},{version:2,profiles:{bad:{learner:null}}},{version:1,profiles:{}}])expect(importStore(JSON.stringify(value))).toBeNull();
+    expect(importStore(' '.repeat(1_000_001))).toBeNull();
+  });
+  it('rejects dangerous keys, mismatched identities and invalid quiz scores',()=>{
+    const learner=createProgress('Ama');const id=learner.learner!.id;
+    expect(importStore(JSON.stringify({version:2,profiles:{[id]:{...learner,quizBest:{code:'<script>'}}}}))).toBeNull();
+    expect(importStore(JSON.stringify({version:2,profiles:{other:learner}}))).toBeNull();
+    expect(importStore('{"version":2,"profiles":{"__proto__":{}}}')).toBeNull();
+    expect(importStore(JSON.stringify({version:2,activeId:'constructor',profiles:{[id]:learner}}))?.activeId).toBe(id);
+  });
 });

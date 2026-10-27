@@ -53,7 +53,32 @@ export function updateActiveProfile(store:ProgressStore,progress:ProgressState):
 export function removeActiveProfile(store:ProgressStore):ProgressStore {if(!store.activeId)return store;const profiles={...store.profiles};delete profiles[store.activeId];const activeId=Object.keys(profiles)[0]||null;return{...store,activeId,profiles}}
 
 export function exportStore(store:ProgressStore){return JSON.stringify({...store,exportedAt:new Date().toISOString()},null,2)}
-export function importStore(text:string):ProgressStore|null {try{const raw=JSON.parse(text) as Partial<ProgressStore>;if(!raw.profiles||typeof raw.profiles!=='object')return null;const profiles=Object.fromEntries(Object.entries(raw.profiles).map(([id,p])=>[id,normalise(p)]));const activeId=raw.activeId&&profiles[raw.activeId]?raw.activeId:Object.keys(profiles)[0]||null;return{version:2,activeId,profiles}}catch{return null}}
+export const MAX_BACKUP_BYTES = 1_000_000;
+export function importStore(text:string):ProgressStore|null {
+  try {
+    if(text.length>MAX_BACKUP_BYTES || new TextEncoder().encode(text).length>MAX_BACKUP_BYTES)return null;
+    const raw=JSON.parse(text);
+    if(!raw || raw.version!==2 || !raw.profiles || typeof raw.profiles!=='object' || Array.isArray(raw.profiles))return null;
+    const entries=Object.entries(raw.profiles);
+    if(entries.length>500)return null;
+    const safeKey=(key:string)=>key.length>0&&key.length<=128&&!['__proto__','constructor','prototype'].includes(key);
+    const profiles:ProgressStore['profiles']={};
+    for(const [id,value] of entries){
+      if(!safeKey(id)||!value||typeof value!=='object'||Array.isArray(value))return null;
+      const p=value as ProgressState;
+      if(!p.learner||p.learner.id!==id||typeof p.learner.displayName!=='string'||typeof p.learner.learnerCode!=='string'||p.learner.learnerCode.length>64)return null;
+      if(p.learner.ageBand!==undefined&&!['9-11','12-14'].includes(p.learner.ageBand))return null;
+      for(const list of [p.completedLessons,p.completedProjects,p.completedGames]){
+        if(list!==undefined&&(!Array.isArray(list)||list.length>1000||list.some(x=>typeof x!=='string'||x.length>128)))return null;
+      }
+      if(p.quizBest && (typeof p.quizBest!=='object'||Array.isArray(p.quizBest)||Object.keys(p.quizBest).length>100||Object.entries(p.quizBest).some(([key,score])=>!safeKey(key)||typeof score!=='number'||!Number.isFinite(score)||score<0||score>100)))return null;
+      if([p.xp,p.streak].some(n=>n!==undefined&&(typeof n!=='number'||!Number.isFinite(n)||n<0||n>1_000_000)))return null;
+      profiles[id]=normalise(p);
+    }
+    const activeId=typeof raw.activeId==='string'&&Object.prototype.hasOwnProperty.call(profiles,raw.activeId)?raw.activeId:Object.keys(profiles)[0]||null;
+    return {version:2,activeId,profiles};
+  }catch{return null}
+}
 
 export function learningStreak(progress:ProgressState,date=new Date()):Pick<ProgressState,'streak'|'lastLearningDate'>{const today=date.toISOString().slice(0,10);if(progress.lastLearningDate===today)return{streak:progress.streak,lastLearningDate:today};const yesterday=new Date(date);yesterday.setUTCDate(yesterday.getUTCDate()-1);return{streak:progress.lastLearningDate===yesterday.toISOString().slice(0,10)?progress.streak+1:1,lastLearningDate:today}}
 
